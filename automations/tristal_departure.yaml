@@ -1,0 +1,9 @@
+- alias: tristal arrival
+  hide_entity: True
+  trigger:
+    platform: state
+    entity_id: input_boolean.tristal_away_mode
+    to: false
+  action:
+    - service: light.turn_off
+      entity_id: light.master_bedroom
