@@ -1,0 +1,43 @@
+- alias: tristal away mode off
+  hide_entity: True
+  trigger:
+    platform: state
+    entity_id: group.tristal
+    from: 'not_home'
+    to: 'home'
+  action:
+    service: input_boolean.turn_off
+    entity_id: input_boolean.tristal_away_mode
+    
+- alias: tristal away mode on
+  hide_entity: True
+  trigger:
+    platform: state
+    entity_id: group.tristal
+    from: 'home'
+    to: 'not_home'
+  action:
+    service: input_boolean.turn_on
+    entity_id: input_boolean.tristal_away_mode
+    
+- alias: family away mode off
+  hide_entity: True
+  trigger:
+    platform: state
+    entity_id: group.family
+    from: 'not_home'
+    to: 'home'
+  action:
+    service: input_boolean.turn_off
+    entity_id: input_boolean.family_away_mode
+    
+- alias: family away mode on
+  hide_entity: True
+  trigger:
+    platform: state
+    entity_id: group.family
+    from: 'home'
+    to: 'not_home'
+  action:
+    service: input_boolean.turn_on
+    entity_id: input_boolean.family_away_mode    
